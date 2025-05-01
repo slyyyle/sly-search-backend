@@ -1,0 +1,1818 @@
+{
+    "general": {
+        "instanceName": "SlySearch",
+        "resultsPerPage": "20",
+        "safeSearch": "0",
+        "defaultLanguage": "en",
+        "openNewTab": true,
+        "infiniteScroll": true,
+        "ragEnabled": false,
+        "autocomplete": false,
+        "autocompleteMin": "4",
+        "faviconResolver": "google",
+        "banTime": "5",
+        "maxBanTime": "120",
+        "searchOnCategory": true
+    },
+    "engines": {
+        "loadouts": [
+            {
+                "id": "ab7eca1d-99a8-4266-92bf-0eb9fac688dd",
+                "name": "slyle",
+                "config": [
+                    {
+                        "id": "google",
+                        "name": "google",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!g",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "yahoo news",
+                        "name": "yahoo news",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!yhn",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "yahoo",
+                        "name": "yahoo",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!yh",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "presearch",
+                        "name": "presearch",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ps",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 4,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "qwant",
+                        "name": "qwant",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!qw",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "searchmysite",
+                        "name": "searchmysite",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!sms",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "startpage",
+                        "name": "startpage",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!sp",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wikidata",
+                        "name": "wikidata",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wd",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "encyclosearch",
+                        "name": "encyclosearch",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!es",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "alexandria",
+                        "name": "alexandria",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!alx",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 1.5,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "bing",
+                        "name": "bing",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!bi",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "brave",
+                        "name": "brave",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!br",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "curlie",
+                        "name": "curlie",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!cl",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wiby",
+                        "name": "wiby",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wib",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "mwmbl",
+                        "name": "mwmbl",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!mwm",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wolframalpha",
+                        "name": "wolframalpha",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wa",
+                        "categories": [
+                            "science",
+                            "general"
+                        ],
+                        "timeout": 6,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "stract",
+                        "name": "stract",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!str",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "yacy",
+                        "name": "yacy",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ya",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 5,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "mojeek",
+                        "name": "mojeek",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!mjk",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "ask",
+                        "name": "ask",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ask",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "crowdview",
+                        "name": "crowdview",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!cv",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wikipedia",
+                        "name": "wikipedia",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wp",
+                        "categories": [
+                            "general"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "bing images",
+                        "name": "bing images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!bii",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "artic",
+                        "name": "artic",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!arc",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 4,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "brave.images",
+                        "name": "brave images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!brimg",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "deviantart",
+                        "name": "deviantart",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!da",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "qwant images",
+                        "name": "qwant images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!qwi",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "startpage images",
+                        "name": "startpage images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!spi",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wallhaven",
+                        "name": "wallhaven",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wh",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wikicommons.images",
+                        "name": "wikicommons images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wc",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "yacy images",
+                        "name": "yacy images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!yai",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 5,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "unsplash",
+                        "name": "unsplash",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!us",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "seekr images",
+                        "name": "seekr images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!seimg",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "mojeek images",
+                        "name": "mojeek images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!mjkimg",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "openverse",
+                        "name": "openverse",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!opv",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "material icons",
+                        "name": "material icons",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!mi",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "ipernity",
+                        "name": "ipernity",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ip",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "flickr",
+                        "name": "flickr",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!fl",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "frinkiac",
+                        "name": "frinkiac",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!frk",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "findthatmeme",
+                        "name": "findthatmeme",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ftm",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "google images",
+                        "name": "google images",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!goi",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "imgur",
+                        "name": "imgur",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!img",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "adobe stock",
+                        "name": "adobe stock",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!asi",
+                        "categories": [
+                            "images"
+                        ],
+                        "timeout": 6,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "adobe stock video",
+                        "name": "adobe stock video",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!asv",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 6,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "bing videos",
+                        "name": "bing videos",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!biv",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "bitchute",
+                        "name": "bitchute",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!bit",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "brave.videos",
+                        "name": "brave videos",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!brvid",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "dailymotion",
+                        "name": "dailymotion",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!dm",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "google play movies",
+                        "name": "google play movies",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!gpm",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "google videos",
+                        "name": "google videos",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!gov",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "invidious",
+                        "name": "invidious",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!iv",
+                        "categories": [
+                            "videos",
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "vimeo",
+                        "name": "vimeo",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!vm",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wikicommons.videos",
+                        "name": "wikicommons videos",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wcv",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "youtube",
+                        "name": "youtube",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!yt",
+                        "categories": [
+                            "videos",
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "seekr videos",
+                        "name": "seekr videos",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!sevid",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "rumble",
+                        "name": "rumble",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ru",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "media.ccc.de",
+                        "name": "media.ccc.de",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!c3tv",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "livespace",
+                        "name": "livespace",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ls",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 5,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "peertube",
+                        "name": "peertube",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ptb",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 6,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "piped",
+                        "name": "piped",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ppd",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "odysee",
+                        "name": "odysee",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!od",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "qwant videos",
+                        "name": "qwant videos",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!qwv",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "sepiasearch",
+                        "name": "sepiasearch",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!sep",
+                        "categories": [
+                            "videos"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "qwant news",
+                        "name": "qwant news",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!qwn",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "reuters",
+                        "name": "reuters",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!reu",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "seekr news",
+                        "name": "seekr news",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!senews",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "startpage news",
+                        "name": "startpage news",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!spn",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wikinews",
+                        "name": "wikinews",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wn",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "mojeek news",
+                        "name": "mojeek news",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!mjknews",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "brave.news",
+                        "name": "brave news",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!brnews",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "bing news",
+                        "name": "bing news",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!bin",
+                        "categories": [
+                            "news"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "bandcamp",
+                        "name": "bandcamp",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!bc",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "adobe stock audio",
+                        "name": "adobe stock audio",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!asa",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 6,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "piped.music",
+                        "name": "piped music",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ppdm",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "radio browser",
+                        "name": "radio browser",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!rb",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "soundcloud",
+                        "name": "soundcloud",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!sc",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wikicommons.audio",
+                        "name": "wikicommons audio",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wca",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "mixcloud",
+                        "name": "mixcloud",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!mc",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "genius",
+                        "name": "genius",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!gen",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "deezer",
+                        "name": "deezer",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!dz",
+                        "categories": [
+                            "music"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "anaconda",
+                        "name": "anaconda",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!conda",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 6,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "arch linux wiki",
+                        "name": "arch linux wiki",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!al",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "codeberg",
+                        "name": "codeberg",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!cb",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "crates.io",
+                        "name": "crates.io",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!crates",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 6,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "discuss.python",
+                        "name": "discuss python",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!dpy",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "docker hub",
+                        "name": "docker hub",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!dh",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "free software directory",
+                        "name": "free software directory",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!fsd",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 5,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "gitea.com",
+                        "name": "gitea.com",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!gitea",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "github",
+                        "name": "github",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!gh",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "gitlab",
+                        "name": "gitlab",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!gl",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "hackernews",
+                        "name": "hackernews",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!hn",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "microsoft learn",
+                        "name": "microsoft learn",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!msl",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "npm",
+                        "name": "npm",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!npm",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 5,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "ollama",
+                        "name": "ollama",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ollama",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "mankier",
+                        "name": "mankier",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!man",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "pi-hole.community",
+                        "name": "pi-hole community",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!pi",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "pypi",
+                        "name": "pypi",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!pypi",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "searchcode code",
+                        "name": "searchcode code",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!scc",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "sourcehut",
+                        "name": "sourcehut",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!srht",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "stackoverflow",
+                        "name": "stackoverflow",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!st",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "superuser",
+                        "name": "superuser",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!su",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "askubuntu",
+                        "name": "askubuntu",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!ubuntu",
+                        "categories": [
+                            "it"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "arxiv",
+                        "name": "arxiv",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!arx",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 4,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "crossref",
+                        "name": "crossref",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!cr",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 30,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "google scholar",
+                        "name": "google scholar",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!gos",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "openairedatasets",
+                        "name": "openaire datasets",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!oad",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 5,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "openairepublications",
+                        "name": "openaire publications",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!oap",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 5,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "pdbe",
+                        "name": "pdbe",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!pdb",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "pubmed",
+                        "name": "pubmed",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!pub",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "semantic scholar",
+                        "name": "semantic scholar",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!se",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wikispecies",
+                        "name": "wikispecies",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wsp",
+                        "categories": [
+                            "science"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "1337x",
+                        "name": "1337x",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!1337x",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "annas archive",
+                        "name": "anna's archive",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!aa",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "bt4g",
+                        "name": "bt4g",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!bt4g",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "btdigg",
+                        "name": "btdigg",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!bt",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "z-library",
+                        "name": "z-library",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!zlib",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 7,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "wikicommons.files",
+                        "name": "wikicommons files",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!wcf",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "solidtorrents",
+                        "name": "solidtorrents",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!solid",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 4,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "piratebay",
+                        "name": "pirate bay",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!tpb",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 3,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "library genesis",
+                        "name": "library genesis",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!lg",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 7,
+                        "potential_bias": null,
+                        "description": null
+                    },
+                    {
+                        "id": "kickass",
+                        "name": "kickass",
+                        "enabled": true,
+                        "weight": 1.0,
+                        "shortcut": "!kc",
+                        "categories": [
+                            "files"
+                        ],
+                        "timeout": 4,
+                        "potential_bias": null,
+                        "description": null
+                    }
+                ]
+            }
+        ],
+        "activeLoadoutId": "ab7eca1d-99a8-4266-92bf-0eb9fac688dd"
+    },
+    "privacy": {
+        "proxyImages": true,
+        "removeTrackers": true,
+        "blockCookies": false,
+        "queryInTitle": false,
+        "method": "POST",
+        "urlAnonymizer": false
+    },
+    "auto_navigation": {
+        "engine_selector_model": "mistral:7b-instruct-v0.2-q5_K_M",
+        "retriever_k": 2,
+        "base_chat_model": "llama3:8b-instruct-q8_0"
+    },
+    "appearance": {
+        "resultsLayout": "list",
+        "theme": "cyberpunk",
+        "centerAlignment": false,
+        "defaultLocale": "auto",
+        "hotkeys": "default",
+        "urlFormat": "pretty",
+        "enableQuickLinks": true,
+        "quickLinks": [
+            {
+                "id": "github",
+                "label": "GitHub",
+                "url": "https://github.com",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
+                "category": "SoftDev",
+                "starred": true
+            },
+            {
+                "id": "link-1745450935609",
+                "label": "HackerNews",
+                "url": "https://news.ycombinator.com",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=64",
+                "category": "Forums"
+            },
+            {
+                "id": "link-1745450945053",
+                "label": "DoorDash",
+                "url": "https://doordash.com",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=doordash.com&sz=64",
+                "category": "Shop",
+                "starred": true
+            },
+            {
+                "id": "link-1745450955672",
+                "label": "Amazon",
+                "url": "https://amazon.com",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=amazon.com&sz=64",
+                "category": "Shop"
+            },
+            {
+                "id": "link-1745451000650",
+                "label": "First Citizens",
+                "url": "https://firstcitizens.com",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=firstcitizens.com&sz=64",
+                "category": "Finance",
+                "starred": true
+            },
+            {
+                "id": "link-1745451011164",
+                "label": "Chase",
+                "url": "https://chase.com",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=chase.com&sz=64",
+                "category": "Finance",
+                "starred": true
+            },
+            {
+                "id": "link-1745451027360",
+                "label": "Terminal Trove",
+                "url": "https://terminaltrove.com",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=terminaltrove.com&sz=64",
+                "category": "SoftDev"
+            },
+            {
+                "id": "link-1745451042752",
+                "label": "Linux DAW",
+                "url": "https://linuxdaw.org",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=linuxdaw.org&sz=64",
+                "category": "Music"
+            },
+            {
+                "id": "link-1745451114429",
+                "label": "RapPad",
+                "url": "https://rappad.co",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=rappad.co&sz=64",
+                "category": "Music",
+                "starred": true
+            },
+            {
+                "id": "link-1745451180208",
+                "label": "UnixPorn",
+                "url": "reddit.com/r/unixporn",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=reddit.com/r/unixporn&sz=64",
+                "category": "SoftDev"
+            },
+            {
+                "id": "link-1745683563301",
+                "label": "VG-Todo",
+                "url": "http://localhost:3001",
+                "thumbnail": "https://simg.nicepng.com/png/small/267-2678312_youtube-thumbnail-mario-series.png",
+                "category": "Personal",
+                "starred": true
+            }
+        ]
+    },
+    "advanced": {
+        "instanceUrl": "http://localhost:8000/",
+        "requestTimeout": "5",
+        "maxRequestTimeout": "10",
+        "formats": [
+            "json",
+            "html"
+        ],
+        "headlessMode": false,
+        "enableResultProxy": false,
+        "resultProxyUrl": "",
+        "resultProxyKey": "",
+        "poolConnections": "100",
+        "poolMaxsize": "20",
+        "enableHttp2": true,
+        "customCss": "",
+        "debugMode": false,
+        "redisUrl": null,
+        "limiter": false,
+        "publicInstance": false
+    },
+    "personalSources": {
+        "sources": [
+            {
+                "id": "normal",
+                "label": "Web",
+                "icon": "Zap",
+                "color": "#176BEF",
+                "gradient": "from-[#176BEF]/70 to-[#FF3E30]/70",
+                "type": null
+            },
+            {
+                "id": "youtube",
+                "label": "YouTube",
+                "icon": "Youtube",
+                "color": "#FF0000",
+                "gradient": "from-[#FF0000]/70 to-[#CC0000]/70",
+                "type": null
+            },
+            {
+                "id": "photos",
+                "label": "Photos",
+                "icon": "Image",
+                "color": "#176BEF",
+                "gradient": "from-[#176BEF]/70 to-[#FF3E30]/70",
+                "type": null
+            },
+            {
+                "id": "obsidian",
+                "label": "Obsidian",
+                "icon": "Brain",
+                "color": "#7E6AD7",
+                "gradient": "from-[#7E6AD7]/70 to-[#9C87E0]/70",
+                "type": null
+            },
+            {
+                "id": "ai",
+                "label": "Ollama",
+                "icon": "Database",
+                "color": "#176BEF",
+                "gradient": "from-[#176BEF]/70 to-[#FF3E30]/70",
+                "type": null
+            }
+        ],
+        "loadouts": [],
+        "obsidian": {
+            "path": "/home/slyle/Documents/alex/",
+            "vaultName": null,
+            "useLocalPlugin": false,
+            "apiPort": null,
+            "pluginApiKey": null,
+            "resultsPerPage": 12
+        },
+        "localFiles": {
+            "path": null,
+            "fileTypes": "md,txt,pdf",
+            "useIndexer": false,
+            "resultsPerPage": 10
+        },
+        "ai": {
+            "provider": "openai",
+            "apiKey": null,
+            "baseUrl": null,
+            "model": "gpt-4o",
+            "temperature": 0.7,
+            "maxTokens": 1000,
+            "resultsPerPage": 1
+        },
+        "youtube": {
+            "path": "/home/slyle/Videos/tartube/tartube_db_export.json",
+            "download_base_path": "/home/slyle/Videos/tartube/",
+            "apiKey": null,
+            "includeChannels": true,
+            "includePlaylists": true,
+            "resultsPerPage": 48,
+            "resultsColumns": 4
+        },
+        "music": {
+            "path": null,
+            "resultsPerPage": 10
+        },
+        "photos": {
+            "path": "/home/slyle/Pictures/",
+            "resultsPerPage": 48,
+            "resultsColumns": 4
+        }
+    }
+}
