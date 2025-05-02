@@ -93,7 +93,7 @@ except UndefinedValueError:
 
 # Maintain ENGINE_CATALOG_PATH for loadout functionality
 try:
-    ENGINE_CATALOG_PATH = config('ENGINE_CATALOG_PATH', default='backend/engine_catalog.json')
+    ENGINE_CATALOG_PATH = config('ENGINE_CATALOG_PATH', default='engine_catalog.json')
     logger.info("--- Engine Paths (from environment or defaults) ---")
     logger.info(f"Engine Catalog Path: {ENGINE_CATALOG_PATH}")
     logger.info("--------------------------------------------------------------")
@@ -101,7 +101,7 @@ except UndefinedValueError as e:
     # This shouldn't happen if defaults are provided in config()
     logger.error(f"Unexpected UndefinedValueError for engine paths: {e}")
     # Set explicit defaults again just in case
-    ENGINE_CATALOG_PATH = 'backend/engine_catalog.json'
+    ENGINE_CATALOG_PATH = 'engine_catalog.json'
 except Exception as e:
     logger.exception(f"Error loading engine paths configuration: {e}")
     raise RuntimeError(f"Failed to load engine paths configuration: {e}")

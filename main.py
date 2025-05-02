@@ -22,6 +22,7 @@ import main_config
 import main_routes
 # Import directly from the routers directory/file
 from routers import chat as chat_router 
+from routers import engine_routes as engine_router
 # --- End Corrected Imports ---
 
 # --- FastAPI App Initialization ---
@@ -57,6 +58,15 @@ except RuntimeError as e:
      logger.error(f"--- FATAL: Failed to initialize and include chat router: {e} ---", exc_info=True)
      # Depending on criticality, you might want the app to exit or prevent startup.
      # raise e # Optional: prevent startup if chat is critical
+
+try:
+    app.include_router(
+        engine_router.router, # Use the imported engine_router object
+        tags=["Engine Selection"]  # Group these endpoints under 'Engine Selection' in docs
+    )
+    logger.info("Included engine selection router.")
+except RuntimeError as e:
+    logger.error(f"--- FATAL: Failed to initialize and include engine router: {e} ---", exc_info=True)
 
 # --- Health Check Endpoint (Optional but Recommended) ---
 @app.get("/health", tags=["Status"])
