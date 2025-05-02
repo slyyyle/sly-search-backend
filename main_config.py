@@ -105,3 +105,10 @@ except UndefinedValueError as e:
 except Exception as e:
     logger.exception(f"Error loading engine paths configuration: {e}")
     raise RuntimeError(f"Failed to load engine paths configuration: {e}")
+
+# --- LLM Configuration ---
+# Moved from engine_round_robin.py for centralized config
+LLM_MODEL = "llama3:8b-instruct-q8_0"
+LLM_TEMPERATURE = 0.2
+LLM_REQUEST_TIMEOUT = 120.0
+LLM_CTX = 4096
