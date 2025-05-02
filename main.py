@@ -5,7 +5,7 @@ import os
 
 # Set up logger
 logger = logging.getLogger(__name__)
-logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(level=logging.INFO) # REMOVED - Let uvicorn handle basic config
 
 # Add the current directory to Python path to help with imports
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -90,6 +90,6 @@ if __name__ == "__main__":
         "main:app",        # Point uvicorn to the FastAPI app instance ('app') in *this* file ('main.py')
         host=main_config.APP_HOST,     # Use host loaded from config module
         port=main_config.APP_PORT,     # Use port loaded from config module
-        log_level="info",  # Set uvicorn's logging level
+        log_level="debug", # Set uvicorn's logging level to debug
         reload=True        # Enable auto-reload for development
     )

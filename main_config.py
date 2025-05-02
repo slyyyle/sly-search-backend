@@ -35,7 +35,7 @@ except Exception as e:
 
 
 # --- Logging Configuration ---
-logging.basicConfig(level=logging.INFO)
+# logging.basicConfig(level=logging.INFO) # REMOVED - Let uvicorn handle basic config
 logger = logging.getLogger(__name__) # Logger specific to this module if needed
 
 # Log loaded config

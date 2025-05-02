@@ -1598,8 +1598,8 @@
                             "general"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "The world's dominant web search engine, known for its massive index and sophisticated ranking algorithms designed to provide relevant results. Key features include its Knowledge Graph for direct answers, integration with numerous other Google services (Maps, News, Images), and rich results powered by structured data."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "yahoo",
@@ -1611,8 +1611,8 @@
                             "general"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A pioneering web portal offering a range of services including a search engine, news, email, finance, and more. Its search engine, once a major competitor, now primarily relies on Bing's search results while integrating its own content and services."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "wikipedia",
@@ -1624,8 +1624,8 @@
                             "general"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A free, multilingual online encyclopedia created and maintained by a global community of volunteer editors using a wiki-based editing system. It is one of the largest and most popular general reference works on the internet, hosted by the Wikimedia Foundation."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "wikidata",
@@ -1637,8 +1637,8 @@
                             "general"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A free, collaborative, multilingual knowledge base hosted by the Wikimedia Foundation. It stores structured data (facts, figures, relationships) that can be used by other Wikimedia projects (like Wikipedia) and external services. It provides a central repository for machine-readable data."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "google images",
@@ -1650,8 +1650,8 @@
                             "images"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "Google's dedicated image search service, providing access to a vast index of images from across the web. Users choose it for its extensive image database, powerful reverse image search capabilities (often integrated with Google Lens), and various filtering options for size, color, usage rights, and type."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "imgur",
@@ -1663,8 +1663,8 @@
                             "images"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A popular online image hosting and sharing service, particularly known for hosting viral images, memes, and GIFs. Users often choose it for its ease of use in uploading images, creating albums, and sharing content, especially on social platforms like Reddit, without requiring an account for basic use."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "vimeo",
@@ -1676,8 +1676,8 @@
                             "videos"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "An online video platform known for hosting high-quality, often artistic or professional video content. It differentiates itself from YouTube with a focus on creator tools, higher video quality options, fewer ads (often subscription-based for advanced features), and a community geared towards filmmakers and creative professionals."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "invidious",
@@ -1690,8 +1690,8 @@
                             "music"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "An open-source alternative front-end for YouTube designed with privacy and user experience in mind. It allows users to watch YouTube videos without ads or Google tracking, offers features like subscriptions without a Google account, and operates through a network of publicly hosted instances or self-hosting."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "peertube",
@@ -1703,8 +1703,8 @@
                             "videos"
                         ],
                         "timeout": 6,
-                        "potential_bias": [],
-                        "description": "A free, open-source, and decentralized video hosting platform based on ActivityPub and WebTorrent. It enables anyone to run their own video hosting \"instance,\" which can federate with others, allowing videos to be shared peer-to-peer to reduce server load. SepiaSearch is often used to search across instances."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "piped",
@@ -1716,8 +1716,8 @@
                             "videos"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "An open-source, privacy-respecting alternative front-end for YouTube. It allows users to watch YouTube content without ads or tracking, offering features like account-free subscriptions and integration with SponsorBlock, accessible via public instances or self-hosting."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "google videos",
@@ -1729,8 +1729,8 @@
                             "videos"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "The video search functionality integrated within the main Google search engine. It aggregates video content primarily from YouTube (owned by Google) but also indexes videos from other platforms across the web, allowing users to find videos based on keywords directly within Google's search results."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "bing videos",
@@ -1742,8 +1742,8 @@
                             "videos"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "Microsoft's video search engine, aggregating content from YouTube, Vimeo, and other platforms. Users might choose it for its clean interface, preview-on-hover feature, and integrated playback within Bing search results."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "brave",
@@ -1755,8 +1755,8 @@
                             "general"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A privacy-focused search engine developed by Brave Software, using its own independent web index. It emphasizes user privacy by not tracking searches or clicks and offers unique features like 'Goggles' for customizable search result rankings."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "bing",
@@ -1768,8 +1768,8 @@
                             "general"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "Microsoft's web search engine, integrated with Windows and Microsoft 365, offering features like Microsoft Rewards. Its key distinction is now its deep integration with AI via Copilot (based on OpenAI's GPT models) for conversational search and generation."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "wikinews",
@@ -1781,8 +1781,8 @@
                             "news"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A Wikimedia project focused on collaborative, citizen journalism, producing timely news articles on a variety of current events from a neutral point of view. Unlike Wikipedia, it emphasizes original reporting and news summaries."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "seekr news",
@@ -1794,8 +1794,8 @@
                             "news"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "The news aggregation feature of the Seekr search engine. It stands out by applying a \"Seekr Score\" to news articles and sources to provide users with context about potential bias or information reliability."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "reuters",
@@ -1807,8 +1807,8 @@
                             "news"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A major international news organization headquartered in London. It is one of the largest news agencies in the world, providing news reports, financial data, and multimedia content to newspapers, broadcast outlets, and online platforms globally. Its website offers direct access to its news coverage."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "hackernews",
@@ -1820,8 +1820,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A social news website focusing on computer science and entrepreneurship, run by the startup incubator Y Combinator. Users submit links to stories and other users can comment and vote on submissions. It is known for its simple interface and high-quality, technically oriented discussions."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "stackoverflow",
@@ -1833,8 +1833,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "The largest and most trusted online community and Q&A website for professional and enthusiast programmers. Users ask and answer technical questions, contributing to a vast, searchable database of solutions across numerous programming languages and technologies. Part of the Stack Exchange network."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "superuser",
@@ -1846,8 +1846,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A question-and-answer website for computer enthusiasts, power users, and IT professionals, covering topics beyond programming (which is Stack Overflow's focus). It's part of the Stack Exchange network, providing community-vetted answers to technical questions."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "sourcehut",
@@ -1859,8 +1859,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A suite of open-source software development tools offering a minimalist, ad-free, and tracker-free experience. It includes Git and Mercurial code hosting, mailing lists for collaboration, a build service (CI/CD), and issue tracking, appealing to developers prioritizing simplicity and FOSS principles."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "lobste.rs",
@@ -1872,8 +1872,8 @@
                             "it"
                         ],
                         "timeout": 5,
-                        "potential_bias": [],
-                        "description": "An invitation-only community-run news aggregation and discussion site primarily focused on technology, computing, and programming. It emphasizes high-quality content and discussion, using a tagging system and community moderation to maintain focus."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "mankier",
@@ -1885,8 +1885,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A web service that renders Linux manual (man) pages in a clean, readable HTML format, making them easily searchable and linkable online. Developers and sysadmins use it for quick access to command documentation without needing a local terminal."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "huggingface spaces",
@@ -1898,8 +1898,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A feature of the Hugging Face platform that allows users to build, host, and share interactive demos and applications (Spaces) powered by machine learning models. It provides infrastructure for showcasing AI projects, allowing others to easily interact with models via web interfaces created using frameworks like Gradio or Streamlit."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "huggingface",
@@ -1911,8 +1911,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "Refers to the \"Models\" section of the Hugging Face platform, a central hub for discovering, sharing, and deploying pre-trained machine learning models. It hosts thousands of open-source models, primarily focused on Natural Language Processing (NLP) but also covering audio, computer vision, and more, accessible via their popular `transformers` library."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "github",
@@ -1924,8 +1924,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "The world's largest platform for hosting Git repositories, widely used for software development and version control, particularly for open-source projects. Its key benefits include a massive developer community, extensive collaboration features (pull requests, issues), integrated CI/CD (GitHub Actions), and project management tools."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "gitlab",
@@ -1937,8 +1937,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A comprehensive DevOps platform delivered as a single application, providing Git repository management alongside integrated CI/CD, security scanning, monitoring, and project management tools. Its primary distinction is offering a complete software development lifecycle solution within one interface, available as both a SaaS and self-hosted option."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "arch linux wiki",
@@ -1950,8 +1950,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "The official, community-maintained documentation for Arch Linux, widely regarded for its exceptional comprehensiveness and accuracy. It serves as a primary resource for Arch users and often provides valuable information applicable to other Linux distributions."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "docker hub",
@@ -1963,8 +1963,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "The official and largest public registry for Docker container images, provided by Docker, Inc. It serves as the primary hub for developers and organizations to find, share, and manage container images, including official base images and community contributions."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "searchcode code",
@@ -1976,8 +1976,8 @@
                             "it"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A specialized search engine designed to help developers find code snippets and examples across multiple programming languages from various sources like public repositories (GitHub, Bitbucket, etc.) and documentation."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "wolframalpha",
@@ -1990,8 +1990,8 @@
                             "general"
                         ],
                         "timeout": 6,
-                        "potential_bias": [],
-                        "description": "A computational knowledge engine or \"answer engine\" developed by Wolfram Research. Instead of providing links like a search engine, it computes answers to factual queries directly by using its curated knowledge base and sophisticated algorithms, particularly strong in math, science, and data analysis."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "pubmed",
@@ -2003,8 +2003,8 @@
                             "science"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A free search engine accessing primarily the MEDLINE database of references and abstracts on life sciences and biomedical topics, maintained by the U.S. National Institutes of Health's National Library of Medicine (NIH/NLM). It is a critical resource for medical researchers and healthcare professionals."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "openairepublications",
@@ -2016,8 +2016,8 @@
                             "science"
                         ],
                         "timeout": 5,
-                        "potential_bias": [],
-                        "description": "Searches for scholarly publications (articles, preprints, books, etc.) aggregated by OpenAIRE. It indexes content from institutional repositories, archives, and journals across Europe and beyond, focusing on open access research outputs."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "openairedatasets",
@@ -2029,8 +2029,8 @@
                             "science"
                         ],
                         "timeout": 5,
-                        "potential_bias": [],
-                        "description": "Searches for research datasets aggregated by OpenAIRE (Open Access Infrastructure for Research in Europe). It provides access to datasets linked to research publications and projects, primarily from European repositories, promoting FAIR data principles."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "google scholar",
@@ -2042,8 +2042,8 @@
                             "science"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "A freely accessible web search engine that specifically indexes the full text or metadata of scholarly literature across various publishing formats and disciplines. Researchers and students use it to find articles, theses, abstracts, and court opinions from academic publishers, professional societies, online repositories, universities, and other websites."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "arxiv",
@@ -2055,8 +2055,8 @@
                             "science"
                         ],
                         "timeout": 4,
-                        "potential_bias": [],
-                        "description": "An open-access repository for scholarly preprints primarily in physics, math, computer science, and related quantitative fields. Researchers use it for rapid dissemination and access to cutting-edge papers before or during formal peer review."
+                        "potential_bias": null,
+                        "description": null
                     },
                     {
                         "id": "semantic scholar",
@@ -2068,13 +2068,13 @@
                             "science"
                         ],
                         "timeout": 3,
-                        "potential_bias": [],
-                        "description": "An AI-powered research tool and search engine for scientific literature developed by the Allen Institute for AI. It uses machine learning to extract meaning and identify connections in papers, providing features like citation context, author intent, and highly relevant paper recommendations."
+                        "potential_bias": null,
+                        "description": null
                     }
                 ]
             }
         ],
-        "activeLoadoutId": "ab7eca1d-99a8-4266-92bf-0eb9fac688dd"
+        "activeLoadoutId": "ai-dynamic"
     },
     "privacy": {
         "proxyImages": true,
