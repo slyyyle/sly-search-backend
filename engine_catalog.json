@@ -48,28 +48,6 @@
     "logistics": "SearXNG scrapes the site. Interface and much content (meme text) are in English."
   },
   {
-    "id": "alexandria",
-    "name": "alexandria",
-    "enabled": false,
-    "weight": 1.0,
-    "shortcut": "!alx",
-    "categories": [
-      "general"
-    ],
-    "timeout": 1.5,
-    "geographical": [],
-    "description": "Appears to be a less common or potentially specialized knowledge/search engine configured within a SearXNG instance. Limited public information makes distinct features difficult to identify; users might choose it for specific niche information.",
-    "engine_type": "Specialized Search (Configurable Backend - Likely Digital Archives/Libraries).",
-    "primary_use_case": "Resource Seeking, Informational (within specific datasets).",
-    "returns": "results (documents, records, data entries) from a specific backend system configured as 'Alexandria' within the SearXNG instance (e.g., an interface to Internet Archive tools, a specific university digital library, or other knowledge base).",
-    "value_proposition": "Provides targeted search within a specific, known digital collection or archive, potentially surfacing items not on the open web.",
-    "overlap": "None with general web search. Similar in function to querying specific databases or library catalogs.",
-    "differentiation": "Highly dependent on SearXNG instance configuration; searches a closed or specific dataset, not the general web. A placeholder name often requiring specific local configuration; value is context-dependent and potentially zero without configuration.",
-    "user_choice": "Only useful if the user knows the SearXNG instance is configured to point 'Alexandria' to a specific, relevant archive/database and their query targets that collection.",
-    "suitability": "Good only for highly targeted Resource Seeking or Informational queries within the configured backend system. Completely unsuitable for general web search or other search types like Problem Solving, Instructional, Comparative, Locational, Planning, Current Awareness.",
-    "logistics": "Effectiveness and results entirely depend on the specific URL/API configured in SearXNG settings for this engine ID. Language depends entirely on the targeted backend system, but many archival systems offer English interfaces."
-  },
-  {
     "id": "alpine linux packages",
     "name": "alpine linux packages",
     "enabled": false,

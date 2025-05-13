@@ -253,7 +253,6 @@
   {
     "category": "general",
     "engines": [
-      "alexandria",
       "ask",
       "bing",
       "brave",
@@ -287,7 +286,7 @@
     "discussion_on_spread_logistics": "- Index Source / Model: Google vs Bing vs Independent vs Decentralized vs Curated KB vs Utility Backend vs Human Curated vs AI Model.",
     "discussion_on_weighting_content": "1. User Goal: Web lookup vs Fact vs Definition vs Translation vs Calculation vs Encyclopedia vs Niche web vs AI task?\n2. Result Format: Links vs Answer vs Data vs Computed vs Translated vs Definition vs Value?",
     "discussion_on_weighting_logistics": "1. Privacy/Index Preference for web search.",
-    "discussion_on_differentiation_content": "- Broad Web: Google/Bing (High index). Yahoo/Ask (Medium quality/backend). DDG/Startpage/Qwant (High privacy+G/B). Brave/Mojeek/Yep/Stract (High index+privacy). Presearch/YaCy (Medium architecture).\n- Niche Web: Wiby/SearchMySite (High focus). Mwmbl (Medium focus/experimental).\n- Encyclopedia: Wikipedia (articles - High function). EncycloSearch (meta - High function).\n- Structured Data: Wikidata (machine-readable facts - High function/format).\n- Computation: WolframAlpha *exclusively* (High function).\n- Definitions: DDG Definitions (quick - High function). DictZone (detailed, esp. HU - High function, Medium language).\n- Translation: LibreTranslate (open-source - High tech/philosophy). Lingva (Google via proxy - High tech/model). MyMemory (human TM - High function).\n- Currency: Currency utility (High function).\n- Directory: Curlie (human curated - High function).\n- AI Tasks: CloudflareAI (generative AI - High function).\n- Specific DB: Alexandria (known backend - High function).",
+    "discussion_on_differentiation_content": "- Broad Web: Google/Bing (High index). Yahoo/Ask (Medium quality/backend). DDG/Startpage/Qwant (High privacy+G/B). Brave/Mojeek/Yep/Stract (High index+privacy). Presearch/YaCy (Medium architecture).\n- Niche Web: Wiby/SearchMySite (High focus). Mwmbl (Medium focus/experimental).\n- Encyclopedia: Wikipedia (articles - High function). EncycloSearch (meta - High function).\n- Structured Data: Wikidata (machine-readable facts - High function/format).\n- Computation: WolframAlpha *exclusively* (High function).\n- Definitions: DDG Definitions (quick - High function). DictZone (detailed, esp. HU - High function, Medium language).\n- Translation: LibreTranslate (open-source - High tech/philosophy). Lingva (Google via proxy - High tech/model). MyMemory (human TM - High function).\n- Currency: Currency utility (High function).\n- Directory: Curlie (human curated - High function).\n- AI Tasks: CloudflareAI (generative AI - High function).",
     "discussion_on_differentiation_logistics": "- Workflow: Chain broad search -> Wikipedia -> Wikidata -> WolframAlpha. Utilities are single-task.",
     "other_notes_content": "- Utilities single-task. Knowledge engines provide specific info types.",
     "other_notes_logistics": "- Privacy major factor for web search. Configurable engines depend on admin."

@@ -21,8 +21,9 @@ import uvicorn
 import main_config
 import main_routes
 # Import directly from the routers directory/file
-from routers import chat as chat_router 
+from routers import chat as chat_router
 from routers import engine_routes as engine_router
+# from routers import freshrss as freshrss_router # <<< REMOVED Import the new FreshRSS router correctly
 # --- End Corrected Imports ---
 
 # --- FastAPI App Initialization ---
@@ -45,6 +46,17 @@ app.add_middleware(
 # --- Include Routers ---
 app.include_router(main_routes.router)
 logger.info("Included main API router (search, settings, vault, files, searxng_engines).")
+
+# <<< REMOVED ENTIRE TRY/EXCEPT BLOCK for freshrss_router >>>
+# try:
+#     app.include_router(
+#         freshrss_router.router, # Use the imported freshrss_router object
+#         tags=["FreshRSS"] # Use the tag defined in the router or a new one
+#         # prefix="/freshrss" # Prefix is already defined in the router itself
+#     )
+#     logger.info("Included FreshRSS router.") # Log inclusion
+# except RuntimeError as e:
+#      logger.error(f"--- FATAL: Failed to initialize and include FreshRSS router: {e} ---", exc_info=True)
 
 try:
     app.include_router(

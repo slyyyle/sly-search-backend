@@ -4,6 +4,7 @@ import urllib.parse
 import os
 from pathlib import Path as FilePath
 from typing import Any, Dict, List, Optional, Union
+import inspect
 
 from fastapi import APIRouter, HTTPException, Query, Path, Request
 from fastapi.responses import FileResponse
@@ -12,7 +13,23 @@ from fastapi.responses import FileResponse
 # Use direct imports
 import main_models as models
 import main_utils as utils
-import main_config as config 
+import main_config as config
+
+# +++ Force reload by deleting from sys.modules +++
+import sys
+if 'routers.freshrss' in sys.modules:
+    # print("[DEBUG main_routes] Deleting routers.freshrss from sys.modules cache...") # <<< REMOVED
+    del sys.modules['routers.freshrss']
+# --- End force reload ---
+
+# +++ Import the specific search function +++
+from routers.freshrss import search_freshrss, FreshRSSSearchResponseModel
+# import inspect # <<< REMOVED
+# print(f"[DEBUG main_routes] Imported search_freshrss: {search_freshrss}") # <<< REMOVED
+# print(f"[DEBUG main_routes] Origin of search_freshrss: {inspect.getfile(search_freshrss)}") # <<< REMOVED
+# print(f"[DEBUG main_routes] Signature of search_freshrss: {inspect.signature(search_freshrss)}") # <<< REMOVED
+
+# TODO: Import other source search functions (Obsidian, YouTube, etc.) when ready
 
 logger = logging.getLogger(__name__)
 
@@ -26,20 +43,21 @@ async def read_root():
     return {"message": "SlySearch Backend API is running."}
 
 # --- Search Endpoint ---
-# Define the response model explicitly covering all possible search types + generic web search
+# Update the response model union to include FreshRSS
 SearchResponseUnion = Union[
-    models.ObsidianSearchResponse,
-    models.YouTubeSearchResponse,
-    models.PhotosSearchResponse,
-    models.MusicSearchResponse,
-    Dict[str, Any] # For SearXNG web search results (which are typically Dict[str, Any])
+    models.ObsidianSearchResponse, # Assuming this exists or will be defined
+    models.YouTubeSearchResponse, # Assuming this exists or will be defined
+    models.PhotosSearchResponse, # Assuming this exists or will be defined
+    models.MusicSearchResponse, # Assuming this exists or will be defined
+    FreshRSSSearchResponseModel, # <<< ADDED
+    Dict[str, Any] # For SearXNG web search results
 ]
 
 @router.get("/search", response_model=SearchResponseUnion, tags=["Search"])
 async def search(
-    request: Request, # Inject request object if needed (e.g., for client headers, though not used here yet)
+    request: Request,
     q: str = Query(..., min_length=1, description="The search query term"),
-    source: str = Query('web', description="Data source ID (e.g., web, obsidian, youtube, photos, music). Defaults to 'web'."),
+    source: str = Query('web', description="Data source ID (e.g., web, obsidian, youtube, photos, music, freshrss). Defaults to 'web'."), # <<< source is the ID
 
     # --- SearXNG specific parameters ---
     category: Optional[str] = Query(None, description="SearXNG category filter (e.g., general, images, news)"),
@@ -51,25 +69,74 @@ async def search(
 
     # --- General parameters applicable to potentially multiple sources ---
     results: Optional[int] = Query(None, ge=1, le=100, description="Number of results per page (overrides source-specific or general setting)"),
-    rag: Optional[str] = Query(None, description="Flag to enable RAG enhancement for web results (e.g., 'enabled')") # Simple flag for now
+    rag: Optional[str] = Query(None, description="Flag to enable RAG enhancement for web results (e.g., 'enabled')")
 ) -> SearchResponseUnion:
     """
-    Performs a search based on the specified source ('web', 'obsidian', 'youtube', 'photos', 'music').
-    Routes to SearXNG for 'web' source or specific local search functions otherwise.
+    Performs a search based on the specified source ID ('web', or a custom ID like 'my-obsidian').
+    Determines the source *type* (e.g., 'web', 'obsidian', 'freshrss') from settings.
+    Routes to SearXNG for 'web' type or specific local search functions otherwise.
     Applies pagination and relevant filters based on query parameters and application settings.
     """
-    logger.info(f"Received search request: Query='{q}', Source='{source}', Category='{category}', Page='{pageno}'")
+    logger.info(f"Received search request: Query='{q}', Source ID='{source}', Category='{category}', Page='{pageno}'")
 
     current_settings = utils.load_settings() # Load current settings for source paths, defaults etc.
-    actual_source = source.lower().strip() if source else 'web' # Normalize source ID, default to web
+    # Normalize source ID to lowercase for consistent matching
+    actual_source_id = source.lower() if source else 'web' # This is the ID
+
+    # --- Determine Source Type from Settings ---
+    source_type = 'web' # Default to web
+    if actual_source_id != 'web':
+        personal_sources_config = current_settings.get('personalSources', {})
+        sources_list = personal_sources_config.get('sources', [])
+        found_source_info = next((s for s in sources_list if s.get('id', '').lower() == actual_source_id), None)
+
+        if found_source_info:
+            source_type = found_source_info.get('type', 'web').lower() # Get type from list, default to web if missing
+            logger.info(f"Found type '{source_type}' for source ID '{actual_source_id}' in settings.")
+        else:
+            # If the ID is not 'web' and not found in the sources list, treat as unknown
+            logger.warning(f"Source ID '{actual_source_id}' not found in personalSources.sources list. Treating as unknown.")
+            source_type = 'unknown' # Or handle error differently if preferred
+
+    # --- Determine Results Per Page (Applies to all sources) ---
+    results_per_page = results # Use query param `results` if provided
+
+    # Fallback to settings if query param not provided
+    if results_per_page is None:
+        # Get the specific configuration block using the ID
+        source_config = current_settings.get('personalSources', {}).get(actual_source_id)
+
+        # Use source-specific setting if available and valid, otherwise fallback
+        if source_config and isinstance(source_config, dict) and 'resultsPerPage' in source_config:
+            try:
+                results_per_page = int(source_config['resultsPerPage'])
+            except (ValueError, TypeError):
+                logger.warning(f"Invalid 'resultsPerPage' setting for source ID '{actual_source_id}'. Using default.")
+                results_per_page = 10 # Default if setting is invalid
+        else:
+            # If source ID has no specific setting (e.g. custom ID with missing config) or is 'web'
+            # Use a general default
+            results_per_page = 10 # General fallback default
+
+    # Apply bounds (ensure it's at least 1 and max 100)
+    results_per_page = max(1, min(results_per_page or 10, 100)) # Ensure it's not None before min/max
 
     try:
+        # --- Route based on DETERMINED SOURCE TYPE ---
+        
         # ===========================
         # --- Web Search (SearXNG) ---
         # ===========================
-        if actual_source == 'web':
+        if source_type == 'web': # <<< Compare against determined type
+            # --- Ensure ID used for Web config is 'web' ---
+            # Although type is 'web', the config object might still be keyed by a custom ID
+            # if the user somehow managed to set type='web' for a custom ID.
+            # For standard web search, we assume the relevant config (if any) is under the 'web' key.
+            web_settings = current_settings.get('personalSources', {}).get('web', {}) # Explicitly use 'web' key
+            logger.info(f"Routing to SearXNG web search for query: '{q}' using settings from 'personalSources.web'")
+
             # -- Determine SearXNG Engines to Use --
-            effective_engines_str: Optional[str] = None # The final string to pass to SearXNG
+            effective_engines_str: Optional[str] = None
             engine_param_received = engines is not None
             logger.debug(f"Received 'engines' parameter from request: {engines}")
 
@@ -245,7 +312,7 @@ async def search(
             search_results = await utils.query_searxng(q, searxng_params)
 
             # Add source identifier to the response for the frontend
-            search_results['source'] = 'web' # Mark the source as 'web'
+            search_results['source'] = actual_source_id
 
             # --- Optional RAG Enhancement ---
             # Check both the request parameter `rag` and the general setting `ragEnabled`
@@ -274,30 +341,35 @@ async def search(
             return search_results
 
         # =======================================
+        # --- FreshRSS Search ---
+        # =======================================
+        elif source_type == 'freshrss':
+            logger.info(f"Routing search to FreshRSS module for query: '{q}'")
+            # Call the imported search function
+            # Pass the globally determined results_per_page
+            freshrss_results: FreshRSSSearchResponseModel = await search_freshrss(
+                query=q,
+                settings=current_settings,
+                pageno=pageno or 1, # Ensure pageno is at least 1
+                results_per_page=results_per_page # Pass the calculated value
+            )
+            # The function already returns the correct Pydantic model
+            return freshrss_results
+
+        # =======================================
         # --- Handle Other Configured Sources ---
         # =======================================
-        elif actual_source in ['obsidian', 'youtube', 'photos', 'music']: # Add 'localFiles' etc. here when implemented
-            source_config_key = actual_source # e.g., 'obsidian', 'youtube'
+        elif source_type in ['obsidian', 'youtube', 'photos', 'music']: # Add 'localFiles' etc. here when implemented
+            source_config_key = source_type # e.g., 'obsidian', 'youtube'
             # Get the specific configuration block for this source type from settings
             source_settings = current_settings.get('personalSources', {}).get(source_config_key)
 
             # Check if the source is configured and has a path set
             if not source_settings or not source_settings.get('path'):
-                 logger.warning(f"Search requested for '{actual_source}', but its path is not configured.")
-                 raise HTTPException(status_code=400, detail=f"Source '{actual_source}' is not configured with a valid path in settings.")
+                 logger.warning(f"Search requested for '{source_type}', but its path is not configured.")
+                 raise HTTPException(status_code=400, detail=f"Source '{source_type}' is not configured with a valid path in settings.")
 
             try:
-                # --- Determine Results Per Page for this Source ---
-                # Priority: Query param `results` > Source-specific Setting `resultsPerPage` > Fallback default (10)
-                results_per_page = results # Use query param `results` if provided
-                if results_per_page is None:
-                    try:
-                         # Use source-specific setting, converting to int
-                         results_per_page = int(source_settings.get('resultsPerPage', 10))
-                    except (ValueError, TypeError):
-                         results_per_page = 10 # Fallback if setting is invalid
-                results_per_page = max(1, min(results_per_page, 100)) # Apply bounds
-
                 # Get the base path from settings - DO NOT resolve/validate here, let helpers do it.
                 base_path = FilePath(source_settings['path'])
 
@@ -307,7 +379,7 @@ async def search(
                 total_results = 0     # Total number of hits found
 
                 # Dispatch to the correct search utility function
-                if actual_source == 'obsidian':
+                if source_type == 'obsidian':
                     # Validate config against model first
                     config_model = models.ObsidianSourceConfig(**source_settings)
                     # Resolve path strictly *before* passing to helper (ensures base exists)
@@ -322,7 +394,7 @@ async def search(
                     # Return structured response
                     return models.ObsidianSearchResponse(query=q, results=paginated_results, errors=errors, total_results=total_results)
 
-                elif actual_source == 'youtube':
+                elif source_type == 'youtube':
                     config_model = models.YouTubeSourceConfig(**source_settings)
                     resolved_path = base_path.resolve(strict=True)
                     if not resolved_path.is_file(): raise HTTPException(status_code=400, detail="Configured YouTube export path exists but is not a file.")
@@ -332,7 +404,7 @@ async def search(
                     paginated_results = all_results_list[start_index : start_index + results_per_page]
                     return models.YouTubeSearchResponse(query=q, results=paginated_results, errors=errors, total_results=total_results)
 
-                elif actual_source == 'photos':
+                elif source_type == 'photos':
                     config_model = models.PhotosSourceConfig(**source_settings)
                     resolved_path = base_path.resolve(strict=True)
                     if not resolved_path.is_dir(): raise HTTPException(status_code=400, detail="Configured Photos path exists but is not a directory.")
@@ -342,7 +414,7 @@ async def search(
                     paginated_results = all_results_list[start_index : start_index + results_per_page]
                     return models.PhotosSearchResponse(query=q, results=paginated_results, errors=errors, total_results=total_results)
 
-                elif actual_source == 'music':
+                elif source_type == 'music':
                     # Check if Mutagen dependency is met before proceeding
                     if not utils.MUTAGEN_AVAILABLE:
                          logger.error("Music search requested, but Mutagen library is not installed.")
@@ -361,23 +433,23 @@ async def search(
             # --- Error Handling for Local Source Search ---
             except FileNotFoundError:
                 # Raised by resolve(strict=True) if the base path doesn't exist
-                logger.error(f"Configured path for source '{actual_source}' not found: {source_settings.get('path')}")
-                raise HTTPException(status_code=404, detail=f"Configured path for source '{actual_source}' not found.")
+                logger.error(f"Configured path for source '{source_type}' not found: {source_settings.get('path')}")
+                raise HTTPException(status_code=404, detail=f"Configured path for source '{source_type}' not found.")
             except PermissionError:
                  # Raised by resolve(strict=True) or potentially by search helpers
-                logger.error(f"Permission denied accessing path for source '{actual_source}': {source_settings.get('path')}")
-                raise HTTPException(status_code=403, detail=f"Permission denied for source '{actual_source}' path.")
+                logger.error(f"Permission denied accessing path for source '{source_type}': {source_settings.get('path')}")
+                raise HTTPException(status_code=403, detail=f"Permission denied for source '{source_type}' path.")
             except models.ValidationError as e:
                  # Catch validation errors when creating the specific config model (e.g., YouTubeSourceConfig(**source_settings))
-                 logger.error(f"Invalid configuration settings for source '{actual_source}': {e}", exc_info=True)
-                 raise HTTPException(status_code=500, detail=f"Invalid server configuration for '{actual_source}' source: {e.errors()}")
+                 logger.error(f"Invalid configuration settings for source '{source_type}': {e}", exc_info=True)
+                 raise HTTPException(status_code=500, detail=f"Invalid server configuration for '{source_type}' source: {e.errors()}")
             except HTTPException as e:
                 # Re-raise HTTP exceptions that might have been raised by helpers (e.g., invalid path type)
                 raise e
             except Exception as e:
                 # Catch unexpected errors during the search process for this source
-                logger.exception(f"Unexpected error during '{actual_source}' search for query '{q}'")
-                raise HTTPException(status_code=500, detail=f"Internal server error during {actual_source} search: {e}")
+                logger.exception(f"Unexpected error during '{source_type}' search for query '{q}'")
+                raise HTTPException(status_code=500, detail=f"Internal server error during {source_type} search: {e}")
 
         # =========================
         # --- Invalid Source ID ---

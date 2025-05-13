@@ -138,19 +138,6 @@
                         "description": null
                     },
                     {
-                        "id": "alexandria",
-                        "name": "alexandria",
-                        "enabled": true,
-                        "weight": 1.0,
-                        "shortcut": "!alx",
-                        "categories": [
-                            "general"
-                        ],
-                        "timeout": 1.5,
-                        "potential_bias": null,
-                        "description": null
-                    },
-                    {
                         "id": "bing",
                         "name": "bing",
                         "enabled": true,
@@ -239,19 +226,6 @@
                             "general"
                         ],
                         "timeout": 3,
-                        "potential_bias": null,
-                        "description": null
-                    },
-                    {
-                        "id": "yacy",
-                        "name": "yacy",
-                        "enabled": true,
-                        "weight": 1.0,
-                        "shortcut": "!ya",
-                        "categories": [
-                            "general"
-                        ],
-                        "timeout": 5,
                         "potential_bias": null,
                         "description": null
                     },
@@ -408,19 +382,6 @@
                             "images"
                         ],
                         "timeout": 3,
-                        "potential_bias": null,
-                        "description": null
-                    },
-                    {
-                        "id": "yacy images",
-                        "name": "yacy images",
-                        "enabled": true,
-                        "weight": 1.0,
-                        "shortcut": "!yai",
-                        "categories": [
-                            "images"
-                        ],
-                        "timeout": 5,
                         "potential_bias": null,
                         "description": null
                     },
@@ -977,19 +938,6 @@
                         "enabled": true,
                         "weight": 1.0,
                         "shortcut": "!rb",
-                        "categories": [
-                            "music"
-                        ],
-                        "timeout": 3,
-                        "potential_bias": null,
-                        "description": null
-                    },
-                    {
-                        "id": "soundcloud",
-                        "name": "soundcloud",
-                        "enabled": true,
-                        "weight": 1.0,
-                        "shortcut": "!sc",
                         "categories": [
                             "music"
                         ],
@@ -2074,7 +2022,7 @@
                 ]
             }
         ],
-        "activeLoadoutId": "ai-dynamic"
+        "activeLoadoutId": "a3c44e16-ee63-496a-ad2d-084cb541dbce"
     },
     "privacy": {
         "proxyImages": true,
@@ -2086,7 +2034,7 @@
     },
     "appearance": {
         "resultsLayout": "list",
-        "theme": "cyberpunk",
+        "theme": "rasta-waves",
         "centerAlignment": false,
         "defaultLocale": "auto",
         "hotkeys": "default",
@@ -2100,13 +2048,6 @@
                 "thumbnail": "https://www.google.com/s2/favicons?domain=github.com&sz=64",
                 "category": "SoftDev",
                 "starred": true
-            },
-            {
-                "id": "link-1745450935609",
-                "label": "HackerNews",
-                "url": "https://news.ycombinator.com",
-                "thumbnail": "https://www.google.com/s2/favicons?domain=news.ycombinator.com&sz=64",
-                "category": "Forums"
             },
             {
                 "id": "link-1745450945053",
@@ -2125,7 +2066,7 @@
             },
             {
                 "id": "link-1745451000650",
-                "label": "First Citizens",
+                "label": "FCB",
                 "url": "https://firstcitizens.com",
                 "thumbnail": "https://www.google.com/s2/favicons?domain=firstcitizens.com&sz=64",
                 "category": "Finance",
@@ -2162,19 +2103,47 @@
                 "starred": true
             },
             {
-                "id": "link-1745451180208",
-                "label": "UnixPorn",
-                "url": "reddit.com/r/unixporn",
-                "thumbnail": "https://www.google.com/s2/favicons?domain=reddit.com/r/unixporn&sz=64",
-                "category": "SoftDev"
-            },
-            {
                 "id": "link-1745683563301",
-                "label": "VG-Todo",
+                "label": "SlyTodo",
                 "url": "http://localhost:3001",
                 "thumbnail": "https://simg.nicepng.com/png/small/267-2678312_youtube-thumbnail-mario-series.png",
                 "category": "Personal",
                 "starred": true
+            },
+            {
+                "id": "link-1746476844492",
+                "label": "Zoho Mail",
+                "url": "https://www.zoho.com/mail/",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=www.zoho.com&sz=64",
+                "category": "Misc"
+            },
+            {
+                "id": "link-1746943699041",
+                "label": "SlyRSS",
+                "url": "http://localhost:8081/",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=localhost&sz=64",
+                "category": "Personal"
+            },
+            {
+                "id": "link-1746943722139",
+                "label": "SlyMealie",
+                "url": "http://localhost:8082/",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=localhost&sz=64",
+                "category": "Personal"
+            },
+            {
+                "id": "link-1746943746192",
+                "label": "SlyYacy",
+                "url": "http://localhost:8090/",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=localhost&sz=64",
+                "category": "Personal"
+            },
+            {
+                "id": "link-1746944012180",
+                "label": "Google AI Studio",
+                "url": "https://aistudio.google.com",
+                "thumbnail": "https://www.google.com/s2/favicons?domain=aistudio.google.com&sz=64",
+                "category": "Misc"
             }
         ]
     },
@@ -2202,28 +2171,28 @@
     "personalSources": {
         "sources": [
             {
-                "id": "normal",
+                "id": "web",
                 "label": "Web",
                 "icon": "Zap",
                 "color": "#176BEF",
                 "gradient": "from-[#176BEF]/70 to-[#FF3E30]/70",
-                "type": null
+                "type": "web"
+            },
+            {
+                "id": "slyrss",
+                "label": "SlyRSS",
+                "icon": "Rss",
+                "color": "#176BEF",
+                "gradient": "from-[#176BEF]/70 to-[#FF3E30]/70",
+                "type": "freshrss"
             },
             {
                 "id": "youtube",
-                "label": "YouTube",
+                "label": "SlyTube",
                 "icon": "Youtube",
                 "color": "#FF0000",
                 "gradient": "from-[#FF0000]/70 to-[#CC0000]/70",
-                "type": null
-            },
-            {
-                "id": "photos",
-                "label": "Photos",
-                "icon": "Image",
-                "color": "#176BEF",
-                "gradient": "from-[#176BEF]/70 to-[#FF3E30]/70",
-                "type": null
+                "type": "youtube"
             },
             {
                 "id": "obsidian",
@@ -2231,7 +2200,7 @@
                 "icon": "Brain",
                 "color": "#7E6AD7",
                 "gradient": "from-[#7E6AD7]/70 to-[#9C87E0]/70",
-                "type": null
+                "type": "obsidian"
             },
             {
                 "id": "ai",
@@ -2239,7 +2208,15 @@
                 "icon": "Database",
                 "color": "#176BEF",
                 "gradient": "from-[#176BEF]/70 to-[#FF3E30]/70",
-                "type": null
+                "type": "ai"
+            },
+            {
+                "id": "photos",
+                "label": "Photos",
+                "icon": "Image",
+                "color": "#176BEF",
+                "gradient": "from-[#176BEF]/70 to-[#FF3E30]/70",
+                "type": "photos"
             }
         ],
         "loadouts": [],

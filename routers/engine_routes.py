@@ -326,7 +326,12 @@ async def engine_selection_stream_generator(
 
         # --- Step 5: Evaluate Individual Engines ---
         logger.debug("Step 5: Starting Engine Evaluation. Yielding message.")
-        yield yield_event("log_message", {"step": 5, "status": "start", "message": f"Evaluating {len(candidate_engines)} engines individually..."})
+        yield yield_event("log_message", {
+            "step": 5, 
+            "status": "start", 
+            "message": f"Evaluating {len(candidate_engines)} engines individually...",
+            "candidate_engines": [engine.get("id") for engine in candidate_engines]
+        })
         common_context_keys = ["original_query", "expanded_query", "analysis", "selected_grouping"] # Removed refined_categories from context for simplified prompt
         common_context = {k: memory.get(k) for k in common_context_keys}
         temp_selected_ids = [] # Store decisions from this step

@@ -133,10 +133,10 @@ class LocalFilesSourceConfig(BaseModel):
     resultsPerPage: Optional[int] = 10
 
 class AISourceConfig(BaseModel):
-    provider: Optional[str] = "openai" # This might need updating if focusing on Ollama
+    provider: Optional[str] = "openai" 
     apiKey: Optional[str] = None
-    baseUrl: Optional[str] = None # Could potentially use OLLAMA_BASE_URL here
-    model: Optional[str] = "gpt-4o" # Could potentially use OLLAMA_MODEL here
+    baseUrl: Optional[str] = None 
+    model: Optional[str] = "gpt-4o" 
     temperature: Optional[Union[str, float, int]] = "0.7"
     maxTokens: Optional[Union[str, int]] = "1000"
     resultsPerPage: Optional[int] = 1
@@ -159,16 +159,41 @@ class PhotosSourceConfig(BaseModel):
     resultsPerPage: Optional[int] = 10
     resultsColumns: Optional[int] = 4
 
+# +++ Add FreshRSS Config Model +++
+class FreshRSSSourceConfig(BaseModel):
+    base_url: Optional[Union[HttpUrl, str, None]] = None 
+    username: Optional[str] = None
+    api_password: Optional[str] = None
+    resultsPerPage: Optional[int] = 10
+    openNewTab: Optional[bool] = True
+    
+    @field_validator('base_url', mode='before')
+    @classmethod
+    def validate_base_url(cls, v):
+        if isinstance(v, str) and v.strip(): 
+            try:
+                return HttpUrl(v)
+            except ValidationError:
+                raise ValueError(f"Invalid URL format for FreshRSS base_url: {v}")
+        return v 
+
+# +++ Add Web Config Model (Assuming structure if needed, mirroring frontend schema) +++
+class WebSourceConfig(BaseModel):
+    resultsPerPage: Optional[int] = 10
+    openNewTab: Optional[bool] = True
+    searchOnCategory: Optional[bool] = True
+
 class PersonalSourcesSettings(BaseModel):
-    sources: Optional[List[SourceListItem]] = Field(default_factory=lambda: [
-        SourceListItem(id="normal", label="Web", icon="Zap", color="#176BEF", gradient="from-[#176BEF]/70 to-[#FF3E30]/70", type="web"),
+    sources: List[SourceListItem] = [
+        SourceListItem(id="web", label="Web", icon="Zap", color="#176BEF", gradient="from-[#176BEF]/70 to-[#FF3E30]/70", type="web"),
         SourceListItem(id="obsidian", label="Obsidian", icon="Brain", color="#7E6AD7", gradient="from-[#7E6AD7]/70 to-[#9C87E0]/70", type="obsidian"),
         SourceListItem(id="localFiles", label="Files", icon="FileText", color="#F7B529", gradient="from-[#FF3E30]/70 to-[#F7B529]/70", type="localFiles"),
         SourceListItem(id="ai", label="AI", icon="Bot", color="#10B981", gradient="from-[#10B981]/70 to-[#059669]/70", type="ai"),
         SourceListItem(id="youtube", label="YouTube", icon="Youtube", color="#FF0000", gradient="from-[#FF0000]/70 to-[#CC0000]/70", type="youtube"),
         SourceListItem(id="music", label="Music", icon="Library", color="#FF7700", gradient="from-[#FF7700]/70 to-[#FF3300]/70", type="music"),
         SourceListItem(id="photos", label="Photos", icon="Image", color="#3498DB", gradient="from-[#3498DB]/70 to-[#2980B9]/70", type="photos"),
-    ])
+        SourceListItem(id="freshrss", label="FreshRSS", icon="Rss", color="#FFA500", gradient="from-[#FFA500]/70 to-[#FF8C00]/70", type="freshrss"),
+    ]
     loadouts: Optional[List[SourceLoadoutItem]] = Field(default_factory=list)
     obsidian: Optional[ObsidianSourceConfig] = Field(default_factory=lambda: ObsidianSourceConfig(resultsPerPage=10))
     localFiles: Optional[LocalFilesSourceConfig] = Field(default_factory=lambda: LocalFilesSourceConfig(resultsPerPage=10))
@@ -176,6 +201,7 @@ class PersonalSourcesSettings(BaseModel):
     youtube: Optional[YouTubeSourceConfig] = Field(default_factory=lambda: YouTubeSourceConfig(resultsPerPage=10, resultsColumns=4))
     music: Optional[MusicSourceConfig] = Field(default_factory=lambda: MusicSourceConfig(resultsPerPage=10))
     photos: Optional[PhotosSourceConfig] = Field(default_factory=lambda: PhotosSourceConfig(resultsPerPage=10, resultsColumns=4))
+    freshrss: Optional[FreshRSSSourceConfig] = Field(default_factory=lambda: FreshRSSSourceConfig(resultsPerPage=10, openNewTab=True))
 
 # Main Settings Data Model
 class SettingsData(BaseModel):
